@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billy's Grooming | Professional Dog Grooming in Redditch</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: white; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 3rem; background: white; border-bottom: 1px solid #e8e8e8; position: sticky; top: 0; z-index: 100; }
+.nav-logo { font-size: 22px; font-weight: 700; color: #0F6E56; letter-spacing: -0.5px; }
+.nav-logo small { display: block; font-size: 11px; font-weight: 400; color: #999; letter-spacing: 1px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 14px; color: #444; text-decoration: none; }
+.nav-links a:hover { color: #0F6E56; }
+.nav-cta { background: #0F6E56; color: white !important; padding: 9px 20px; border-radius: 6px; font-size: 13px !important; }
+.nav-cta:hover { background: #085041 !important; }
+.hero { background: #f0faf5; padding: 6rem 3rem; text-align: center; border-bottom: 1px solid #e0f0e8; }
+.eyebrow { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #0F6E56; font-weight: 600; margin-bottom: 1rem; }
+.hero h1 { font-size: 48px; font-weight: 700; color: #082d22; line-height: 1.15; margin-bottom: 1.2rem; max-width: 640px; margin-left: auto; margin-right: auto; letter-spacing: -1px; }
+.hero p { font-size: 18px; color: #555; max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn-primary { background: #0F6E56; color: white; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+.btn-primary:hover { background: #085041; }
+.btn-secondary { background: transparent; color: #0F6E56; padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; display: inline-block; border: 2px solid #0F6E56; cursor: pointer; }
+.btn-secondary:hover { background: #f0faf5; }
+.hero-tags { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.hero-tag { font-size: 13px; color: #0F6E56; background: white; border: 1px solid #b8e0d0; padding: 6px 16px; border-radius: 20px; }
+.section { padding: 5rem 3rem; }
+.section-label { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #0F6E56; font-weight: 600; margin-bottom: 0.8rem; text-align: center; }
+.section-title { font-size: 34px; font-weight: 700; color: #082d22; text-align: center; margin-bottom: 0.6rem; letter-spacing: -0.5px; }
+.section-sub { font-size: 16px; color: #777; text-align: center; margin-bottom: 3.5rem; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+.services-list { max-width: 900px; margin: 0 auto; border: 1px solid #e8e8e8; border-radius: 16px; overflow: hidden; }
+.service-row { display: grid; grid-template-columns: 260px 1fr; background: white; border-bottom: 1px solid #e8e8e8; }
+.service-row:last-child { border-bottom: none; }
+.service-row.reverse { grid-template-columns: 1fr 260px; }
+.service-row.reverse .service-img { order: 2; }
+.service-row.reverse .service-content { order: 1; border-left: none; border-right: 1px solid #e8e8e8; }
+.service-img { background: #c8e6d8; overflow: hidden; min-height: 240px; }
+.service-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.service-content { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #e8e8e8; }
+.service-eyebrow { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #0F6E56; font-weight: 600; margin-bottom: 0.5rem; }
+.service-content h3 { font-size: 22px; font-weight: 700; color: #082d22; margin-bottom: 0.8rem; }
+.service-content p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 1.2rem; }
+.service-includes { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.5rem; }
+.service-includes li { font-size: 13px; color: #555; padding-left: 18px; position: relative; }
+.service-includes li::before { content: '✓'; position: absolute; left: 0; color: #0F6E56; font-weight: 700; font-size: 12px; }
+.service-price-tag { font-size: 20px; font-weight: 700; color: #0F6E56; }
+.service-price-tag span { font-size: 13px; font-weight: 400; color: #999; }
+.breeds-section { background: #f8f8f6; padding: 4rem 3rem; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.breeds-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 800px; margin: 2rem auto 0; }
+.breed-pill { background: white; border: 1px solid #ddd; border-radius: 20px; padding: 7px 18px; font-size: 13px; color: #444; }
+.trust-section { padding: 5rem 3rem; background: white; }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+.trust-card { padding: 1.75rem; border: 1px solid #eee; border-radius: 12px; }
+.trust-symbol { font-size: 18px; color: #0F6E56; margin-bottom: 1rem; font-weight: 700; }
+.trust-card h3 { font-size: 15px; font-weight: 700; color: #082d22; margin-bottom: 0.5rem; }
+.trust-card p { font-size: 13px; color: #777; line-height: 1.6; }
+.booking-section { background: #f0faf5; padding: 5rem 3rem; border-top: 1px solid #dceee6; }
+.booking-inner { max-width: 620px; margin: 0 auto; }
+.booking-inner .section-title, .booking-inner .section-sub { text-align: left; margin-left: 0; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.form-full { grid-column: 1 / -1; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 600; color: #333; }
+.form-group input, .form-group select, .form-group textarea { padding: 11px 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; font-family: inherit; background: white; color: #1a1a1a; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #0F6E56; box-shadow: 0 0 0 3px rgba(15,110,86,0.1); }
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-submit { margin-top: 1.5rem; }
+.form-submit button { background: #0F6E56; color: white; border: none; padding: 14px 36px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; width: 100%; }
+.form-submit button:hover { background: #085041; }
+.form-note { font-size: 12px; color: #888; margin-top: 1rem; text-align: center; }
+.form-success { display: none; background: white; border: 1px solid #9FE1CB; border-radius: 12px; padding: 2.5rem; text-align: center; }
+.form-success h3 { color: #0F6E56; font-size: 20px; margin-bottom: 0.5rem; }
+.form-success p { color: #666; font-size: 14px; }
+footer { background: #082d22; color: white; padding: 3.5rem 3rem 2rem; }
+.footer-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+.footer-brand .logo { font-size: 20px; font-weight: 700; color: white; margin-bottom: 0.8rem; }
+.footer-brand p { font-size: 13px; color: #9FE1CB; line-height: 1.9; }
+.footer-col h4 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #9FE1CB; margin-bottom: 1rem; font-weight: 600; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul a { font-size: 14px; color: #ccc; text-decoration: none; }
+.footer-col ul a:hover { color: white; }
+.footer-bottom { max-width: 900px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 12px; color: #9FE1CB; }
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 4rem 1.5rem; }
+  .hero h1 { font-size: 30px; }
+  .section { padding: 3.5rem 1.5rem; }
+  .service-row, .service-row.reverse { grid-template-columns: 1fr !important; }
+  .service-row.reverse .service-img { order: 0; }
+  .service-row.reverse .service-content { order: 0; border-right: none !important; }
+  .service-content { border-left: none !important; border-top: 1px solid #e8e8e8; }
+  .service-img { min-height: 200px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .booking-section, .breeds-section, .trust-section { padding: 3.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Billy's Grooming<small>Redditch · Est. 2025</small></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#breeds">Breeds</a></li>
+    <li><a href="#about">Why Us</a></li>
+    <li><a href="#book" class="nav-cta">Book a Groom</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Professional Dog Grooming · Redditch</div>
+  <h1>Expert grooming, every single visit</h1>
+  <p>A calm, caring environment where your dog is treated as an individual. Every groom tailored to their coat, breed and temperament.</p>
+  <div class="hero-actions">
+    <a href="#book" class="btn-primary">Book an appointment</a>
+    <a href="#services" class="btn-secondary">See our services</a>
+  </div>
+  <div class="hero-tags">
+    <span class="hero-tag">All breeds welcome</span>
+    <span class="hero-tag">One dog at a time</span>
+    <span class="hero-tag">Large secure garden</span>
+    <span class="hero-tag">Fully insured</span>
+    <span class="hero-tag">Redditch, B97</span>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-label">What we offer</div>
+  <div class="section-title">Our grooming services</div>
+  <div class="section-sub">From a simple freshen-up to a full transformation — every service carried out with care and attention.</div>
+  <div class="services-list">
+
+    <div class="service-row">
+      <div class="service-img"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=600&q=80&fit=crop" alt="Dog being bathed" loading="lazy"></div>
+      <div class="service-content">
+        <div class="service-eyebrow">Perfect for a freshen-up</div>
+        <h3>Bath & Dry</h3>
+        <p>A thorough wash and professional finish to keep your dog clean, comfortable and smelling wonderful between full grooms.</p>
+        <ul class="service-includes">
+          <li>Luxury shampoo and conditioning rinse</li>
+          <li>Professional blow-dry and brush out</li>
+          <li>Ear and eye cleanse</li>
+          <li>Nail trim</li>
+          <li>Finishing cologne spritz</li>
+        </ul>
+        <div class="service-price-tag">From £25 <span>· varies by breed & size</span></div>
+      </div>
+    </div>
+
+    <div class="service-row reverse">
+      <div class="service-img"><img src="https://images.unsplash.com/photo-1581888227599-779811939961?w=600&q=80&fit=crop" alt="Dog grooming tidy" loading="lazy"></div>
+      <div class="service-content">
+        <div class="service-eyebrow">Maintain between full grooms</div>
+        <h3>Bath & Tidy</h3>
+        <p>Everything in the Bath & Dry, plus a careful tidy to keep your dog looking neat — face, paws and sanitary areas maintained with precision.</p>
+        <ul class="service-includes">
+          <li>Everything in Bath & Dry</li>
+          <li>Face and sanitary area tidy</li>
+          <li>Paw and pad trim</li>
+          <li>Coat maintenance scissor work</li>
+        </ul>
+        <div class="service-price-tag">From £35 <span>· varies by breed & size</span></div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-img"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80&fit=crop" alt="Full dog groom" loading="lazy"></div>
+      <div class="service-content">
+        <div class="service-eyebrow">Complete transformation</div>
+        <h3>The Full Groom</h3>
+        <p>Our most comprehensive service — a complete styling from bath to finish, tailored to your dog's breed or your personal preference.</p>
+        <ul class="service-includes">
+          <li>Everything in Bath & Tidy</li>
+          <li>Full scissor or clipper cut</li>
+          <li>Breed-standard or bespoke styling</li>
+          <li>Coat and skin health check</li>
+          <li>Finishing bandana or bow</li>
+        </ul>
+        <div class="service-price-tag">From £45 <span>· varies by breed & size</span></div>
+      </div>
+    </div>
+
+    <div class="service-row reverse">
+      <div class="service-img"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80&fit=crop" alt="Puppy first groom" loading="lazy"></div>
+      <div class="service-content">
+        <div class="service-eyebrow">First-timers welcome</div>
+        <h3>Puppy's First Groom</h3>
+        <p>A gentle, positive introduction to grooming designed to build confidence. We use reward-based methods to help your puppy feel safe and at ease.</p>
+        <ul class="service-includes">
+          <li>Gentle bath and blow-dry</li>
+          <li>Soft brush and tool introduction</li>
+          <li>Nail file</li>
+          <li>Positive, reward-based throughout</li>
+        </ul>
+        <div class="service-price-tag">From £20 <span>· all puppies welcome</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="breeds-section" id="breeds">
+  <div class="eyebrow">Breed specialists</div>
+  <div class="section-title">We know your breed</div>
+  <p style="font-size:16px; color:#777; margin-top:0.5rem;">Trained in breed-specific coat types, cuts and standards across all shapes and sizes.</p>
+  <div class="breeds-wrap">
+    <span class="breed-pill">Cocker Spaniel</span><span class="breed-pill">Cavapoo</span><span class="breed-pill">Labradoodle</span>
+    <span class="breed-pill">Cockapoo</span><span class="breed-pill">Schnauzer</span><span class="breed-pill">Bichon Frise</span>
+    <span class="breed-pill">Shih Tzu</span><span class="breed-pill">Golden Retriever</span><span class="breed-pill">Labrador</span>
+    <span class="breed-pill">West Highland Terrier</span><span class="breed-pill">Yorkshire Terrier</span><span class="breed-pill">Border Terrier</span>
+    <span class="breed-pill">Maltese</span><span class="breed-pill">Poodle</span><span class="breed-pill">Pug</span>
+    <span class="breed-pill">Chihuahua</span><span class="breed-pill">+ All Breeds</span>
+  </div>
+</section>
+
+<section class="trust-section" id="about">
+  <div class="section-label">Why Billy's</div>
+  <div class="section-title">The Billy's difference</div>
+  <div class="section-sub">What sets us apart from a busy high-street salon.</div>
+  <div class="trust-grid">
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>One dog at a time</h3><p>Your dog has our full, undivided attention. No kennels, no waiting around with other dogs.</p></div>
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>Home environment</h3><p>A calm, quiet setting — much less stressful than a busy commercial salon, especially for anxious dogs.</p></div>
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>Secure garden space</h3><p>A large, fully enclosed garden where dogs can stretch their legs and relax before or after their groom.</p></div>
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>No hidden costs</h3><p>Prices are always discussed upfront. We'll assess your dog's coat and agree a price before any work starts.</p></div>
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>Fully insured</h3><p>Specialist pet grooming public liability insurance for complete peace of mind on every visit.</p></div>
+    <div class="trust-card"><div class="trust-symbol">✦</div><h3>Premium products</h3><p>Salon-quality shampoos and conditioners — kind to skin and coat, chosen for every coat type.</p></div>
+  </div>
+</section>
+
+<section class="booking-section" id="book">
+  <div class="booking-inner">
+    <div class="eyebrow">Get in touch</div>
+    <div class="section-title" style="text-align:left;">Book your appointment</div>
+    <div class="section-sub" style="text-align:left; margin-left:0; margin-bottom:0;">Fill in the form and we'll be in touch within 24 hours to confirm. No payment required at this stage.</div>
+
+    <div id="booking-form">
+      <div class="form-grid">
+        <div class="form-group"><label for="fname">Your name *</label><input type="text" id="fname" placeholder="Jane Smith"></div>
+        <div class="form-group"><label for="fphone">Phone number *</label><input type="tel" id="fphone" placeholder="07XXX XXXXXX"></div>
+        <div class="form-group"><label for="femail">Email address</label><input type="email" id="femail" placeholder="jane@example.com"></div>
+        <div class="form-group"><label for="fbreed">Dog breed</label><input type="text" id="fbreed" placeholder="e.g. Cavapoo"></div>
+        <div class="form-group"><label for="fservice">Service required</label>
+          <select id="fservice">
+            <option value="">Select a service</option>
+            <option>Bath & Dry</option>
+            <option>Bath & Tidy</option>
+            <option>Full Groom</option>
+            <option>Puppy's First Groom</option>
+            <option>Nail Trim only</option>
+            <option>Not sure — please advise</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="fdate">Preferred date</label><input type="date" id="fdate"></div>
+        <div class="form-group form-full"><label for="fnotes">Anything we should know?</label><textarea id="fnotes" placeholder="e.g. nervous around other dogs, matted coat, specific styling requests..."></textarea></div>
+      </div>
+      <div class="form-submit"><button type="button" onclick="submitForm()">Send enquiry</button></div>
+      <p class="form-note">We'll confirm your appointment by phone or WhatsApp within 24 hours.</p>
+    </div>
+
+    <div class="form-success" id="form-success">
+      <h3>Enquiry sent!</h3>
+      <p>Thanks for getting in touch. We'll be back in touch within 24 hours to confirm your appointment.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Billy's Grooming</div>
+      <p>Professional dog grooming in Redditch.<br>Calm, caring and tailored to your dog.<br><br>Redditch, B97<br>hello@billysgrooming.co.uk<br>07XXX XXXXXX</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Bath & Dry</a></li>
+        <li><a href="#services">Bath & Tidy</a></li>
+        <li><a href="#services">Full Groom</a></li>
+        <li><a href="#services">Puppy's First Groom</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit us</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Why Billy's</a></li>
+        <li><a href="#book">Book a groom</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Billy's Grooming · Redditch · All rights reserved</p>
+    <p>Professional dog grooming · Fully insured</p>
+  </div>
+</footer>
+
+<script>
+function submitForm() {
+  var name = document.getElementById('fname').value.trim();
+  var phone = document.getElementById('fphone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('booking-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
